@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import MenuIcon  from '@material-ui/icons/Menu';
-import {IconButton, Tooltip, Divider, ListItemText, makeStyles} from '@material-ui/core';
+import {IconButton, Tooltip, Divider, ListItemText} from '@material-ui/core';
 import {List, ListItem, Drawer} from '@material-ui/core';
 import formImage from '../assets/file-image.jpg';
 import docImage from '../assets/docs.png'

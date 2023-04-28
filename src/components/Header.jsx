@@ -20,23 +20,23 @@ const Header = () => {
 
         <div className="header_search">       
           <Tooltip title="Search">
-          <IconButton className="header_search_icon">
+          <IconButton >
             <SearchIcon />
           </IconButton>
           </Tooltip>
           <input name="search" type="text" placeholder='Search here' />
-          <IconButton className="header_search_icon">
+          <IconButton>
             <CloseIcon />
           </IconButton>
         </div>
         
         <div className="header_right">
           <Tooltip title="Google apps">
-          <IconButton className='header_right_icon'>
+          <IconButton >
             <AppsIcon />
           </IconButton>
           </Tooltip>
-          <IconButton className='header_right_icon' >
+          <IconButton >
             <Avatar src={avatarImage} alt="no image" width={30} height={30} />
           </IconButton>
         </div>
