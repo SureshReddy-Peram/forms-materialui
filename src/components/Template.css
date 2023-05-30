@@ -5,8 +5,8 @@
 }
 
 .template_top{
-    margin-left: 260px;
-    margin-right: 260px;
+    margin-left: 160px;
+    margin-right: 160px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -20,6 +20,7 @@
     font-size: 14px;
     padding-right: 10px;
 }
+
 .gallery_button:hover{
     background-color: gray;
     border-radius: 5px;
@@ -48,7 +49,7 @@
     height: 120px;
     cursor: pointer;
     border-radius: 2px;
-    border: 1px solid #FFFFD7;;
+    border: 1px solid #e3e3ce;
 }
 
 .card_image:hover{
@@ -60,6 +61,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-left: 160px;
+    margin-right: 160px;
+    flex-basis: 20%;
 }
 
 .card_name{

@@ -1,11 +1,10 @@
 import React from 'react'
 import './Header.scss';
 import {Avatar, IconButton, Tooltip} from '@material-ui/core';
-import formImage from '../assets/file-image.jpg';
+import formImage from '../assets/forms_image.png';
 import SearchIcon from '@material-ui/icons/Search';
 import AppsIcon from '@material-ui/icons/Apps';
 import avatarImage from '../assets/suresh.jpg';
-import CloseIcon from '@material-ui/icons/Close';
 import TemporaryDrawer from './TemporaryDrawer';
 
 const Header = () => {
@@ -25,9 +24,6 @@ const Header = () => {
           </IconButton>
           </Tooltip>
           <input name="search" type="text" placeholder='Search here' />
-          <IconButton>
-            <CloseIcon />
-          </IconButton>
         </div>
         
         <div className="header_right">

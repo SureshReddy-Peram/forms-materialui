@@ -1763,6 +1763,11 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
+"@remix-run/router@1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.6.0.tgz#45010e1826f4d81a1b2cfaf874f1aac93998cd28"
+  integrity sha512-N13NRw3T2+6Xi9J//3CGLsK2OqC8NMme3d/YX+nh05K9YHWGcv8DycHJrqGScSP4T75o8IN6nqIMhVFU8ohg8w==
+
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-babel/-/plugin-babel-5.3.1.tgz#04bc0608f4aa4b2e4b1aebf284344d0f68fda283"
@@ -7765,6 +7770,21 @@ react-refresh@^0.11.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.11.0.tgz#77198b944733f0f1f1a90e791de4541f9f074046"
   integrity sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==
 
+react-router-dom@^6.11.0:
+  version "6.11.0"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.11.0.tgz#e9507327dad2dfdd3c4815810dbd8de8fc2ee211"
+  integrity sha512-Q3mK1c/CYoF++J6ZINz7EZzwlgSOZK/kc7lxIA7PhtWhKju4KfF1WHqlx0kVCIFJAWztuYVpXZeljEbds8z4Og==
+  dependencies:
+    "@remix-run/router" "1.6.0"
+    react-router "6.11.0"
+
+react-router@6.11.0:
+  version "6.11.0"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.11.0.tgz#2e9008e40f8ce69e381373a7916ebadfbf2ff184"
+  integrity sha512-hTm6KKNpj9SDG4syIWRjCU219O0RZY8RUPobCFt9p+PlF7nnkRgMoh2DieTKvw3F3Mw6zg565HGnSv8BuoY5oQ==
+  dependencies:
+    "@remix-run/router" "1.6.0"
+
 react-scripts@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-5.0.1.tgz#6285dbd65a8ba6e49ca8d651ce30645a6d980003"
@@ -7829,6 +7849,11 @@ react-transition-group@^4.4.0:
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
+
+react-uuid@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-uuid/-/react-uuid-2.0.0.tgz#e3c97e190db9eef53cb9dacfcc7314d913a411fa"
+  integrity sha512-FNUH/8WR/FEtx0Bu6gmt1eONfc413hhvrEXFWUSFGvznUhI4dYoVZA09p7JHoTpnM4WC2D/bG2YSxGKXF4oVLg==
 
 react@^18.2.0:
   version "18.2.0"
