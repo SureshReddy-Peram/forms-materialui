@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, {useState} from 'react';
+import './QuestionForm.css';
 import CropOriginalIcon from "@material-ui/icons/CropOriginal";
 import Select from "@material-ui/core/Select";
 import Switch from "@material-ui/core/Switch";
@@ -13,21 +14,25 @@ import {
   FormControlLabel,
   IconButton,
   MenuItem,
+  Radio,
+  Tooltip,
+  Divider,
   Typography,
 } from "@material-ui/core";
 import { BsTrash } from "react-icons/bs";
+import {MdContentCopy} from "react-icons/md";
 import FilterNoneIcon from "@material-ui/icons/FilterNone";
 import OndemandVideoIcon from "@material-ui/icons/OndemandVideo";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import RadioButtonUncheckedIcon from "@material-ui/icons/RadioButtonUnchecked";
 import RadioButtonCheckedIcon from "@material-ui/icons/RadioButtonChecked";
-//import ExpandCircleDownOutlinedIcon from '@material-ui/icons/ExpandCircleDownOutlined';
-import "./QuestionForm.css";
+import CloseOutlinedIcon from '@material-ui/icons/CloseOutlined';
 
 const QuestionForm = () => {
+
   const [questions, setQuestions] = useState([
-    {
-      questionText: "Which is the capital of karnataka ?",
+    {  
+      questionText: "Question 1",
       questionType: "radio",
       options: [
         { optionText: "Bangalore" },
@@ -40,141 +45,10 @@ const QuestionForm = () => {
     },
   ]);
 
-  function questionsUI() {
-    return questions.map((ques, i) => (
-      <div>
-        <Accordion
-          expanded={questions.open}
-          className={questions[i].open ? "add_border" : ""}
-        >
-          <AccordionSummary
-            aria-controls="panel-content"
-            id="panel-header"
-            elevation={1}
-            style={{ width: "100%" }}
-          >
-            {questions[i].open ? (
-              <div className="saved_questions">
-                <Typography
-                  style={{
-                    fontSize: "15px",
-                    fontWeight: 400,
-                    letterSpacing: ".1px",
-                    lineHeight: "24px",
-                    paddingBottom: "8px",
-                  }}
-                >
-                  {i + 1}. {questions[i].questionText}
-                </Typography>
-                {ques.map((options, j) => (
-                  <div key={j}>
-                    <div style={{ display: "flex" }}>
-                      <FormControlLabel
-                        style={{ marginLeft: "5px", marginBottom: "5px" }}
-                        disabled
-                        control={
-                          <input
-                            type={ques.questionType}
-                            color="primary"
-                            style={{ marginRight: "3px" }}
-                            required={ques.type}
-                          />
-                        }
-                        label={
-                          <Typography
-                            style={{
-                              fontFamily: "Roboto,Arial, sans-serif",
-                              fontSize: "13px",
-                              fontWeight: 400,
-                              letterSpacing: ".2px",
-                              lineHeight: "20px",
-                              color: "#202124",
-                            }}
-                          >
-                            {ques.options[j].optionText}
-                          </Typography>
-                        }
-                      ></FormControlLabel>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              ""
-            )}
-          </AccordionSummary>
-
-          <div className="question_boxes">
-            <AccordionDetails className="add_question">
-              <div className="add_question_top">
-                <input
-                  type="text"
-                  name="question"
-                  className="question"
-                  placeholder="Untitled Question"
-                  value={ques.questionText}
-                />
-                <CropOriginalIcon style={{ color: "#5f6368" }} />
-                <Select
-                  className="select"
-                  style={{ color: "#5f6368", fontSize: "13px" }}
-                >
-                  <MenuItem id="text" value="Text">
-                    {" "}
-                    <ShortTextIcon style={{ marginRight: "10px" }} /> Short
-                    answer
-                  </MenuItem>
-                  <MenuItem id="text" value="Text">
-                    {" "}
-                    <SubjectIcon style={{ marginRight: "10px" }} /> Paragraph
-                  </MenuItem>
-                  <hr />
-                  <MenuItem id="radio" value="Radio">
-                    {" "}
-                    <RadioButtonCheckedIcon
-                      style={{ marginRight: "10px" }}
-                    />{" "}
-                    Multiple choice
-                  </MenuItem>
-                  <MenuItem id="checkbox" value="Checkboxes">
-                    <CheckBoxOutlinedIcon style={{ marginRight: "10px" }} />{" "}
-                    Checkboxes{" "}
-                  </MenuItem>
-                  {/* <MenuItem id="dropdown" value="Dropdown"><ExpandCircleDownOutlinedIcon style={{marginRight:"10px"}}/> Dropdown</MenuItem> */}
-                </Select>
-              </div>
-              {ques.options.map((op, j) => (
-                <div className="add_question_body" key={j}>
-                  {
-                  ques.questionType !== "text" ? (
-                    <input
-                      type={ques.questionType}
-                      style={{ marginRight: "10px" }}
-                    />
-                  ) : (
-                    <ShortTextIcon style={{ marginRight: "10px" }} />
-                  )}
-                  <div>
-                    <input type="text" name="text" className="text_input" placeholder="option" value={ques.options[j].questionText} />
-                  </div>
-
-                  <CropOriginalIcon style={{color:"5f6368"}} />
-                  <IconButton aria-label="delete">
-                    
-                  </IconButton>
-                </div>
-              ))}
-            </AccordionDetails>
-          </div>
-        </Accordion>
-      </div>
-    ));
-  }
-
   return (
     <>
       <div className="question_form">
-        <div className="section">
+        <div className="section1">
           <div className="question_form_top">
             <input
               type="text"
@@ -210,23 +84,29 @@ const QuestionForm = () => {
           </div>
         </div>
 
-        <div>
-          <CropOriginalIcon />
+        {/* We are adding Icons-group to add New Question(Accordion) */}
+         <div className="section2">
+            <Tooltip title="Add question" placement="right" size="medium">
+              <IconButton  /* onClick={handleAddQuestion}  */ >                
+                <AddCircleOutlineIcon />              
+              </IconButton>-
+            </Tooltip>
+            <Tooltip title="Add image" placement="right" size="medium">
+              <IconButton>
+                <CropOriginalIcon />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Add video" placement="right" size="medium">
+              <IconButton>
+                <OndemandVideoIcon  style={{marginBottom:"0px"}}/>
+              </IconButton>
+            </Tooltip>     
+          </div> 
+          
 
-          <RadioButtonUncheckedIcon />
-          <RadioButtonCheckedIcon />
-          <Select />
-          <Switch />
-          <CheckBoxOutlinedIcon />
-          <ShortTextIcon />
-          <SubjectIcon />
-          <OndemandVideoIcon />
-          <AddCircleOutlineIcon />
-          {/* <ExpandCircleDownOutlinedIcon /> */}
-        </div>
       </div>
     </>
-  );
-};
+  )
+}
 
 export default QuestionForm;
